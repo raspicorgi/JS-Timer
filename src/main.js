@@ -64,7 +64,7 @@ function dewit() {
 dewit();
 
 function updateDisplay() {
-    const hue = 360 * Math.random();
+    const hue = 180;
     if (moment().isBefore(goal)) {
         const m = moment.utc(diff).format("HH:mm:ss");
         t.innerText = m;
@@ -79,15 +79,15 @@ function updateDisplay() {
 
 function begone() {
     clearInterval(interval);
-    t.innerText = "yay";
+    t.innerText = "Beginn in Kürze";
     lol = setInterval(() => {
         setQuickHue();
     }, 100);
 }
 
 function setQuickHue() {
-    body.style = "transition: 0.05s; --hue: " + 360 * Math.random();
-    var hue = 360 * Math.random();
+    body.style = "transition: 0.05s; --hue: " + 180;
+    var hue = 360;
     //sprites.style.filter = "brightness(0) invert(1)";
     moveQuickly();
     moveQuickly();
@@ -166,14 +166,14 @@ function createEpicImage() {
     obj.speed = minSpeed + z * (maxSpeed - minSpeed);
     obj.pos = -300;
     fwd(obj);
-    sprites.append(img);
+    //sprites.append(img);
     images.push(obj);
 }
 
 
 function createLandscape(lol) {
     const img = document.createElement("img");
-    img.src = "landscape.jpg";
+    //img.src = "landscape.jpg";
     img.className = "bg";
     img.style.width = bgWidth + "px";
     let x = -bgWidth;
